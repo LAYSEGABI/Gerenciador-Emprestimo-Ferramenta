@@ -27,7 +27,6 @@ public class FrmEmprestimosRealizados extends javax.swing.JFrame {
     public void carregaTabelaEmprestimosRealizados() {
         DefaultTableModel modelo = (DefaultTableModel) this.JTableEmprestimosRealizados.getModel();
         modelo.setNumRows(0); //Posiciona na primeira linha da tabela
-//Carrega a lista de objetos aluno
 
         EmprestimosDAO emprestimoDAO = new EmprestimosDAO();
 

@@ -51,8 +51,6 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
         JBApagar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         JTFCusto = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextFieldTotalGasto = new javax.swing.JTextField();
         jMenuItem = new javax.swing.JMenuBar();
         jMenuSobre = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -143,14 +141,6 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Custo total gasto");
-
-        jTextFieldTotalGasto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTotalGastoActionPerformed(evt);
-            }
-        });
-
         jMenuSobre.setText("Relatórios");
 
         jMenuItem3.setText("Ferramentas");
@@ -210,34 +200,27 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTFMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(JTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addComponent(JBCancelar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JBAlterar)
                 .addGap(56, 56, 56)
                 .addComponent(JBApagar)
-                .addGap(130, 130, 130))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(JTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldTotalGasto, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(88, 88, 88))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,16 +241,12 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldTotalGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBCancelar)
                     .addComponent(JBAlterar)
                     .addComponent(JBApagar))
-                .addGap(64, 64, 64))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
@@ -405,7 +384,7 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
                     showConfirmDialog(null,
                             "Tem certeza que deseja apagar esta Ferramenta ?");
             if (respostaUsuario == 0) {// clicou em SIM
-                // envia os dados para o Amigo processar
+                // envia os dados para Ferramenta processar
 
                 FerramentaDAO ferramentaDAO = new FerramentaDAO();
                 Ferramenta ferramenta = new Ferramenta(id, nome, marca, custo, disponivel);
@@ -434,10 +413,6 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
     private void JTFCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCustoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFCustoActionPerformed
-
-    private void jTextFieldTotalGastoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTotalGastoActionPerformed
-
-    }//GEN-LAST:event_jTextFieldTotalGastoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,7 +460,6 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenuArquivo;
     private javax.swing.JMenuItem jMenuCadastroAluno;
     private javax.swing.JMenuItem jMenuGerenciarAluno;
@@ -498,6 +472,5 @@ public class FrmTodasFerramentas extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JTextField jTextFieldTotalGasto;
     // End of variables declaration//GEN-END:variables
 }

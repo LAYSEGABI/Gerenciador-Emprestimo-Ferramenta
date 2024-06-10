@@ -22,7 +22,7 @@ public class FrmTodosAmigos extends javax.swing.JFrame {
     public void carregaTabelaTodosAmigos() {
         DefaultTableModel modelo = (DefaultTableModel) this.JTableAmigos.getModel();
         modelo.setNumRows(0); //Posiciona na primeira linha da tabela
-//Carrega a lista de objetos aluno
+
 
         AmigoDAO amigoDAO = new AmigoDAO();
 
@@ -284,7 +284,7 @@ public class FrmTodosAmigos extends javax.swing.JFrame {
 
             if (this.JTableAmigos.getSelectedRow() == -1) {
                 throw new Mensagens(
-                        "Primeiro Selecione um Aluno para APAGAR ");
+                        "Primeiro Selecione um Amigo para APAGAR ");
             } else {
                 id = Integer.parseInt(this.JTableAmigos.
                         getValueAt(this.JTableAmigos.getSelectedRow(), 0).
@@ -293,9 +293,9 @@ public class FrmTodosAmigos extends javax.swing.JFrame {
             // retorna 0 -> primeiro botão | 1 -> segundo botão | 2 -> terceiro botão
             int respostaUsuario = JOptionPane.
                     showConfirmDialog(null,
-                            "Tem certeza que deseja apagar este Aluno ?");
+                            "Tem certeza que deseja apagar este Amigo ?");
             if (respostaUsuario == 0) {// clicou em SIM
-                // envia os dados para o Aluno processar
+                // envia os dados para o Amigo processar
 
                 AmigoDAO amigoDAO = new AmigoDAO();
                 Amigo amigo = new Amigo(id, nome, telefone);
@@ -307,7 +307,7 @@ public class FrmTodosAmigos extends javax.swing.JFrame {
                 this.JTFTelefone.setText("");
 
                 JOptionPane.showMessageDialog(rootPane,
-                        "Aluno Apagado com Sucesso!");
+                        "Amigo Apagado com Sucesso!");
 
             }
             // atualiza a tabela.
@@ -350,7 +350,6 @@ public class FrmTodosAmigos extends javax.swing.JFrame {
             Amigo amigo = new Amigo(id, nome, telefone);
 
             amigoDAO.editarAmigo(amigo);
-            // envia os dados para o Aluno processar
 
             // limpa os campos
             this.JTFNomeAmigo.setText("");

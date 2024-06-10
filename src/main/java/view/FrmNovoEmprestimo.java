@@ -21,7 +21,7 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
         this.objetoamigo = new Amigo();// carrega objeto amigo de amigo
         this.carregaTabelaTodosAmigos();
 
-        this.objetoferramenta = new Ferramenta();// carrega objeto amigo de amigo
+        this.objetoferramenta = new Ferramenta();// carrega objeto Ferramenta de Ferramenta
         this.carregaTabelaTodosFerramentas();
 
     }
@@ -29,7 +29,7 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
     public void carregaTabelaTodosAmigos() {
         DefaultTableModel modelo = (DefaultTableModel) this.JTableAmigos.getModel();
         modelo.setNumRows(0); //Posiciona na primeira linha da tabela
-//Carrega a lista de objetos aluno
+
 
         AmigoDAO amigoDAO = new AmigoDAO();
 
