@@ -74,18 +74,6 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         JTFDataEmprestimo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jMenuItem = new javax.swing.JMenuBar();
-        jMenuArquivo = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuCadastroAluno = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuGerenciarAluno = new javax.swing.JMenuItem();
-        jSeparator4 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuSobre = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -183,62 +171,6 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
 
         jLabel6.setText("Data emprestimo");
 
-        jMenuArquivo.setText("Gerenciar");
-        jMenuArquivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuArquivoActionPerformed(evt);
-            }
-        });
-
-        jMenuItem1.setText("Inicio");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenuArquivo.add(jMenuItem1);
-        jMenuArquivo.add(jSeparator2);
-
-        jMenuCadastroAluno.setText("Novo Amigo");
-        jMenuCadastroAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuCadastroAlunoActionPerformed(evt);
-            }
-        });
-        jMenuArquivo.add(jMenuCadastroAluno);
-        jMenuArquivo.add(jSeparator3);
-
-        jMenuGerenciarAluno.setText("Todos Amigos");
-        jMenuGerenciarAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuGerenciarAlunoActionPerformed(evt);
-            }
-        });
-        jMenuArquivo.add(jMenuGerenciarAluno);
-        jMenuArquivo.add(jSeparator4);
-
-        jMenuItem2.setText("Sair");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenuArquivo.add(jMenuItem2);
-
-        jMenuItem.add(jMenuArquivo);
-
-        jMenuSobre.setText("Relatórios");
-
-        jMenuItem3.setText("Ferramentas");
-        jMenuSobre.add(jMenuItem3);
-
-        jMenuItem4.setText("Emprestimos ");
-        jMenuSobre.add(jMenuItem4);
-
-        jMenuItem.add(jMenuSobre);
-
-        setJMenuBar(jMenuItem);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -286,36 +218,12 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBCancelar)
                     .addComponent(JBConcluir))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FrmMenuPrincipal objeto = new FrmMenuPrincipal();
-        this.dispose();
-        objeto.setVisible(true); // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuCadastroAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadastroAlunoActionPerformed
-        FrmCadastroAmigo objeto = new FrmCadastroAmigo();
-        objeto.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuCadastroAlunoActionPerformed
-
-    private void jMenuGerenciarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuGerenciarAlunoActionPerformed
-
-    }//GEN-LAST:event_jMenuGerenciarAlunoActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuArquivoActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuArquivoActionPerformed
 
     private void JTableAmigosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableAmigosMouseClicked
 
@@ -439,20 +347,8 @@ public class FrmNovoEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenuArquivo;
-    private javax.swing.JMenuItem jMenuCadastroAluno;
-    private javax.swing.JMenuItem jMenuGerenciarAluno;
-    private javax.swing.JMenuBar jMenuItem;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenu jMenuSobre;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JPopupMenu.Separator jSeparator4;
     // End of variables declaration//GEN-END:variables
 }
